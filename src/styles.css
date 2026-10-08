@@ -93,20 +93,23 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
 .scroll-cue { position: absolute; bottom: clamp(14px, 3svh, 30px); left: 50%; transform: translateX(-50%); font-size: 9px; letter-spacing: 2px; color: var(--primary); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; white-space: nowrap; }
 .scroll-cue svg { animation: drift 3s ease-in-out infinite; }
 
-/* Invitation: the text sits in the frame artwork's clear centre column (x 34-66%, y 25-76.5% of
-   the artwork). The artwork is drawn larger than the scene (--frame-w/-h, shifted by --frame-y)
-   so that column is roomy, with only the artwork's outer edges cropped; .frame-opening marks the
-   column with the same numbers, so text and artwork always line up and never overlap.
+/* Invitation: the floral frame is drawn at its true 2:3 shape (never stretched, so it stays sharp)
+   as a card centred on a soft garden backdrop. The card is 1/0.6 of the scene's height and shifted
+   up 30%, so the screen shows the frame from its gold scrolls (18%) to its bottom border (78%).
+   .frame-opening marks the frame's clear centre (x 34-66%, y 25-76.5%) inside the card, and
    useFitToFrame sets the font size (--fit) that fills it. */
-.invitation { --frame-w: 1.3; --frame-h: 1.25; --frame-y: -.06; padding: 0; }
-.invitation .scene-art { inset: auto; top: calc(var(--frame-y) * 100%); left: calc((1 - var(--frame-w)) * 50%); width: calc(var(--frame-w) * 100%); max-width: none; height: calc(var(--frame-h) * 100%); object-fit: fill; transform: none; will-change: auto; }
-.frame-opening { position: absolute; top: calc((.25 * var(--frame-h) + var(--frame-y)) * 100%); bottom: calc((1 - .765 * var(--frame-h) - var(--frame-y)) * 100%); left: calc((.5 - .16 * var(--frame-w)) * 100%); right: calc((.5 - .16 * var(--frame-w)) * 100%); display: grid; align-content: center; font-size: var(--fit, 17px); }
+.invitation { padding: 0; background: #f6efe8; }
+.invitation-backdrop { opacity: .4; }
+.invitation .scene-veil { background: color-mix(in oklab, #f6efe8 45%, transparent); }
+.frame-card { position: absolute; left: 50%; top: -30%; height: calc(100% / .6); aspect-ratio: 2 / 3; translate: -50% 0; }
+.frame-card-art { display: block; width: 100%; height: 100%; max-width: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.frame-opening { position: absolute; top: 25%; bottom: 23.5%; left: 34%; right: 34%; display: grid; align-content: center; font-size: var(--fit, 17px); }
 .invitation .scene-content { max-width: none; }
-.invitation .section-title { font-size: 2em; margin: .3em 0 0; }
+.invitation .section-title { font-size: 1.75em; margin: .3em 0 0; }
 /* "An invitation from the heart": bold deep gold, with a light sweep that plays while the page
    is moving (the effects component sets .is-moving during scrolling). */
 .invite-eyebrow {
-  font-size: .74em; font-weight: 600; letter-spacing: .32em;
+  font-size: .68em; font-weight: 600; letter-spacing: .2em;
   background: linear-gradient(100deg, oklch(.5 .09 75) 42%, oklch(.78 .13 85) 50%, oklch(.5 .09 75) 58%) 100% 0 / 260% 100%;
   -webkit-background-clip: text; background-clip: text; color: transparent;
   animation: shimmer 1.8s linear infinite paused;
@@ -118,12 +121,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
 .invitation .script-line { font-size: 1.1em; }
 .invitation .parent-names { font-size: 1.65em; margin: .2em 0 0; }
 .parents-signature { margin-top: .2em; }
-@media (max-aspect-ratio: 4/5) { .invitation { --frame-w: 1.6; --frame-h: 1.35; --frame-y: -.09; } }
-@media (max-width: 560px) {
-  .invitation { --frame-w: 2.7; --frame-h: 1.4; --frame-y: -.1; }
-  /* Keep the signature above the floating music button. */
-  .frame-opening { bottom: max(calc((1 - .765 * var(--frame-h) - var(--frame-y)) * 100%), 84px); }
-}
+/* Phones: keep the signature above the floating music button. */
+@media (max-width: 560px) { .frame-opening { bottom: 27.5%; } }
 
 /* Celebration */
 .celebration .scene-art { opacity: .5; }

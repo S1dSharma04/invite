@@ -263,39 +263,55 @@ function Invitation() {
         </a>
       </section>
       <section id="invitation" className="scene invitation" data-scene ref={invitationRef}>
-        <img decoding="async" className="scene-art" src={ARTWORK.frame} alt="" loading="lazy" />
-        <div className="frame-opening" ref={openingRef}>
-          <div className="scene-content" ref={invitationTextRef}>
-            <p className="eyebrow invite-eyebrow" data-shimmer>
-              An invitation from the heart
-            </p>
-            <h2 className="section-title">
-              Together with our family,
-              <br />
-              we invite you
-            </h2>
-            <Ornament />
-            <div className="invitation-copy">
-              <p>
-                With immense joy and happiness in our hearts, we invite you and your family to join
-                us on the auspicious occasion of the Ring Ceremony of our beloved daughter Tanya
-                with Vishal.
+        <img
+          decoding="async"
+          className="scene-art invitation-backdrop"
+          src={ARTWORK.garden}
+          alt=""
+          loading="lazy"
+        />
+        <div className="scene-veil" />
+        <div className="frame-card">
+          <img
+            decoding="async"
+            className="frame-card-art"
+            src={ARTWORK.frame}
+            alt=""
+            loading="lazy"
+          />
+          <div className="frame-opening" ref={openingRef}>
+            <div className="scene-content" ref={invitationTextRef}>
+              <p className="eyebrow invite-eyebrow" data-shimmer>
+                An invitation from the heart
               </p>
-              <p>
-                As they begin this beautiful journey of love, companionship and togetherness, we
-                would be honoured to have your gracious presence and blessings on this special day.
-                Your presence will add warmth and happiness to our celebration and make this
-                cherished occasion even more memorable for our family.
-              </p>
-              <p>
-                We look forward to celebrating this beautiful beginning with you and creating
-                memories that will remain close to our hearts forever.
-              </p>
-            </div>
-            <div className="parents-signature">
+              <h2 className="section-title">
+                Together with our family,
+                <br />
+                we invite you
+              </h2>
               <Ornament />
-              <p className="script-line">With love and blessings,</p>
-              <h3 className="parent-names">Mr. Munesh & Mrs. Geeta</h3>
+              <div className="invitation-copy">
+                <p>
+                  With immense joy and happiness in our hearts, we invite you and your family to
+                  join us on the auspicious occasion of the Ring Ceremony of our beloved daughter
+                  Tanya with Vishal.
+                </p>
+                <p>
+                  As they begin this beautiful journey of love, companionship and togetherness, we
+                  would be honoured to have your gracious presence and blessings on this special
+                  day. Your presence will add warmth and happiness to our celebration and make this
+                  cherished occasion even more memorable for our family.
+                </p>
+                <p>
+                  We look forward to celebrating this beautiful beginning with you and creating
+                  memories that will remain close to our hearts forever.
+                </p>
+              </div>
+              <div className="parents-signature">
+                <Ornament />
+                <p className="script-line">With love and blessings,</p>
+                <h3 className="parent-names">Mr. Munesh & Mrs. Geeta</h3>
+              </div>
             </div>
           </div>
         </div>
