@@ -79,14 +79,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Tanya & Vishal — A Beautiful Beginning" },
-      { name: "description", content: "A personal invitation from Tanya’s family to celebrate Tanya and Vishal’s Ring Ceremony." },
+      {
+        name: "description",
+        content:
+          "A personal invitation from Tanya’s family to celebrate Tanya and Vishal’s Ring Ceremony.",
+      },
       { property: "og:title", content: "Tanya & Vishal — A Beautiful Beginning" },
-      { property: "og:description", content: "19 October 2026 · 11:30 AM · Olga Palace, Ghaziabad" },
+      {
+        property: "og:description",
+        content: "19 October 2026 · 11:30 AM · Olga Palace, Ghaziabad",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
