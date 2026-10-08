@@ -1,5 +1,5 @@
 // The single place that says which media the invitation uses.
-// Every file lives in public/media/, which is served as-is on Vercel, on Lovable and in local dev.
+// Every file lives in public/media/, which is served as-is on Vercel and in local dev.
 // (Not public/assets/: hosts cache that folder for a year, so a replaced song would not update.)
 
 /**
