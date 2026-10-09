@@ -97,7 +97,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      // The "TV" seal. ?v= makes browsers drop a previously cached icon; bump it when replacing.
+      { rel: "icon", href: "/favicon.ico?v=2", sizes: "48x48" },
+      { rel: "icon", href: "/icon-512.png?v=2", type: "image/png", sizes: "512x512" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2" },
     ],
   }),
   shellComponent: RootShell,

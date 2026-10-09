@@ -11,13 +11,13 @@ const eventTime = new Date("2026-10-19T11:30:00+05:30").getTime();
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tanya ♥ Vishal — Ring Ceremony Invitation" },
+      { title: "Ring Ceremony Invitation" },
       {
         name: "description",
         content:
           "With love from Mr. Munesh & Mrs. Geeta: celebrate Tanya and Vishal’s Ring Ceremony on 19 October 2026, 11:30 AM, at Olga Palace, Govindpuram, Ghaziabad.",
       },
-      { property: "og:title", content: "Tanya ♥ Vishal — A Beautiful Beginning" },
+      { property: "og:title", content: "Ring Ceremony Invitation" },
       {
         property: "og:description",
         content:
